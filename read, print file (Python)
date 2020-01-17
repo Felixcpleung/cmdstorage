@@ -11,7 +11,7 @@ with open("Lyrics.txt", "r") as File1:
     for i in temp: 
         print(i,end = "")
 
-#method3 : readline()
+#method3a : readline()
 #print with specific number of lines, say 10
 with open("Lyrics.txt", "r") as File1:
     for i in range(0,10):
@@ -19,19 +19,21 @@ with open("Lyrics.txt", "r") as File1:
         print("The line %d is %s" %(i+1, temp))
 		
 		
-#method3b : readline(), while loop, not perfect, may stop due to an empty line
+#method3b : readline(), 
+#while loop, not perfect, may stop due to an empty line
 with open("Lyrics.txt", "r") as File1:
-    temp="start"
+    next_line=File1.readline()
     i=0
-    while temp!="":
+    while next_line!="":
         i += 1
-        temp = File1.readline()
-        print("The line %d is %s" %(i+1, temp),end = "")
+        present_line = next_line
+        print("The line %d is %s" %(i, present_line),end = "")
+        next_line = File1.readline()
 
  #method4: using for loop
  with open("Lyrics.txt", "r") as File1:
     for line in File1:
-        print(line)
+        print(line, end ="")
 		
 		
 

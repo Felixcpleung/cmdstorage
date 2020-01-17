@@ -1,0 +1,37 @@
+#read & print File
+
+#method1 : read()
+with open("Lyrics.txt", "r") as File1:
+	content1 = File1.read()
+		print(content1)
+
+#method2 : readlines()
+with open("Lyrics.txt", "r") as File1:
+    temp = File1.readlines()
+    for i in temp: 
+        print(i,end = "")
+
+#method3 : readline()
+#print with specific number of lines, say 10
+with open("Lyrics.txt", "r") as File1:
+    for i in range(0,10):
+        temp = File1.readline()
+        print("The line %d is %s" %(i+1, temp))
+		
+		
+#method3b : readline(), while loop, not perfect, may stop due to an empty line
+with open("Lyrics.txt", "r") as File1:
+    temp="start"
+    i=0
+    while temp!="":
+        i += 1
+        temp = File1.readline()
+        print("The line %d is %s" %(i+1, temp),end = "")
+
+ #method4: using for loop
+ with open("Lyrics.txt", "r") as File1:
+    for line in File1:
+        print(line)
+		
+		
+
